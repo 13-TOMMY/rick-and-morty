@@ -1,0 +1,6 @@
+.about-container{
+   min-height: 100vh;
+}
+.about-container img{
+  width: 100vw;
+}
