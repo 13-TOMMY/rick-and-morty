@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Footer.css"
+import './Footer.css'
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -11,28 +11,35 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
   },
+  overlay:{
+    backgroundColor: "rgba(0, 0, 0, 0.4)"
+  }
 };
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement(documet.getElementById('root'));
+Modal.setAppElement(document.getElementById('root'));
 
 function Footer() {
-  const[isOpen, setIsOpen] = react.useState(false)
+  //create state to control Modal
+  const [isOpen, setIsOpen] = React.useState(false)
   return (
-    <div className='Footer-container'>
-      <button className="contact-btn" onClick={()=>setIsOpen(true)}>Contact Us</button>
-      <Modal
+    <div className="footer-container">
+        <button className="contact-btn"
+                onClick={()=>setIsOpen(true)} >Contact Us</button>
+
+        <Modal
         isOpen={isOpen}
         onRequestClose={()=>setIsOpen(false)}
         style={customStyles}
         contentLabel="Contact Us Modal"
-      >
-        <div className='modal-header'>
-        <h2>Contact Us</h2>
-        <button className='modal-close-btn' onClick={()=>setIsOpen(false)}>close</button>
+        >
+        <div className="modal-header">
+          <h2>Contact Us</h2>
+          <button className="modal-close-btn" 
+                  onClick={()=>setIsOpen(false)}>X</button>
         </div>
         <form>
-        <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name</label>
           <input type="text" id="name" />
           <label htmlFor="email">Email</label>
           <input type="email" id="email" />
