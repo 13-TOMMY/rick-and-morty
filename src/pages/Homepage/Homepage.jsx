@@ -8,9 +8,9 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Homepage() {
 
-    //now change to global state
-  //NOTE { } NOT []
-  const {darkMode, setDarkMode} = useContext(ThemeContext)
+    //use global state
+    //NOTE { } NOT []
+    const {darkMode, setDarkMode} = useContext(ThemeContext)
 
     //create state for characters
     const[characters, setCharacters] = useState([])
